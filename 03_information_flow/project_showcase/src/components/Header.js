@@ -1,13 +1,20 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
-const Header = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
+const Header = ({ toggleMode, isDarkMode }) => {
+  // Limitations => State Management is Constrained to Component It's Defined In
+  // const [isDarkMode, setIsDarkMode] = useState(true);
 
-  const handleClick = () => setIsDarkMode(!isDarkMode);
+  // console.log(props);
+
+  const handleClick = () => toggleMode();
 
   const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
 
+  // console.log(myArray);
+  // myArray.push(1);
+  // console.log(myArray);
+  
   return (
     <header>
       <h1>
