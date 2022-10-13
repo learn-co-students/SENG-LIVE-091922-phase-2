@@ -1,6 +1,6 @@
 const projects = [
   {
-    id: 1,
+    key: 1,
     name: "Great Outdoors Guide",
     about: "Plan your next adventure to in the U.S. National Parks!",
     phase: 4,
