@@ -9,10 +9,6 @@ presentation:
 
 <h2><strong> React Information Flow </strong></h2>
 
-<img src="https://labs.tadigital.com/wp-content/uploads/2020/03/logo.png">
-
-https://labs.tadigital.com/index.php/2020/03/31/unidirectional-data-flow-in-react/
-
 <!-- slide -->
 
 <h2><strong> ✅ Objectives </strong></h2>
