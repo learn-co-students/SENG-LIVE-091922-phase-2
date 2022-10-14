@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ProjectForm = () => {
+const ProjectForm = ({ projects, onAddProject }) => {
   
   // Breaking Inputs Out Into Separate States
   const [ name, nameSetter ] = useState("");
@@ -9,6 +9,7 @@ const ProjectForm = () => {
   
   // Creating One State Object to Manage Form Data
   const [ formData, formDataSetter ] = useState({
+    id: projects.length + 1,
     name: "",
     about: "",
     phase: "",
@@ -29,7 +30,20 @@ const ProjectForm = () => {
   // console.log(formData);
 
   const handleSubmit = (e) => {
+    // Prevent Page Refresh
     e.preventDefault();
+
+    // Invoking onAddProject to Update "projects" State in App.js
+    onAddProject(formData);
+
+    // Clear Out Input Values via State
+    formDataSetter({
+      name: "",
+      about: "",
+      phase: "",
+      link: "",
+      image: ""
+    });
   }
 
   return (
