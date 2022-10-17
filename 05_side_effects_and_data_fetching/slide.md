@@ -23,7 +23,7 @@ presentation:
 
 <br>
 
-React components are 'pure functions'. This means that given an input(such as a prop), the return is 100% predictable
+React components are [pure functions](https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976). This means that given an input (such as a prop), the return is 100% predictable
 
 <br>
 
@@ -47,9 +47,7 @@ Any time Greeting is called, and provided a new prop, we will always be able to 
 
 <br>
 
-"We perform a side effect when we need to reach outside of our React components to do something. Performing a side effect, however, will not give us a predictable result."
-
-https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/
+"We perform a side effect when we need to reach outside of our React components to do something. Performing a side effect, however, will not give us a predictable result." - [W3Schools](https://www.freecodecamp.org/news/react-useeffect-absolute-beginners/)
 
 <br>
 
@@ -61,7 +59,7 @@ The term 'side effect' not only applies to React but to all functional programmi
 
 <br>
 
-💡 These are operations that will still effect our component, but can't specifically happen during the rendering
+💡 These are operations that will still effect our component but can't specifically happen during the rendering
 
 <br>
 
@@ -89,7 +87,7 @@ The term 'side effect' not only applies to React but to all functional programmi
 
 - Takes in two arguments:
 
-  - A callback function defining the logic to be executed as a side effect(the 'effect')
+  - A callback function defining the logic to be executed as a side effect (the 'effect')
 
   - A dependency array that defines when the side effect should occur. This argument is optional and does not always need to be provided
 
@@ -184,11 +182,6 @@ useEffect(() => {
 <br>
 
 ❗ Why are we not including `projects` like:
-
-What happens here?
-
-<br>
-
 ```js
 useEffect(() => {
   fetch("http://localhost:4000/projects")
