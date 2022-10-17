@@ -7,7 +7,7 @@ import Timer from "./components/Timer";
 const App = () => {
   const [projects, setProjects] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(true);
-  const [isToggled, setIsToggled] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   // Callback Function Responsible for Initiating our Fetch Request
   // const handleClick = () => {
@@ -29,7 +29,7 @@ const App = () => {
       .then((res) => res.json())
       .then((projects) => setProjects(projects));
 
-  }, [isDarkMode]);
+  }, []);
 
   // Dependency Array
     // => Omit Entirely - Component Re-Renders Every Time State is Updated 
@@ -39,13 +39,13 @@ const App = () => {
 
   const onToggleDarkMode = () => setIsDarkMode(!isDarkMode);
 
-  // Callback Function to Toggle "isToggled" State
-  const handleTimer = () => setIsToggled(!isToggled);  
+  // Callback Function to Toggle "isVisible" State
+  const handleTimer = () => setIsVisible(!isVisible);  
 
   return (
     <div className={isDarkMode ? "App" : "App light"}>
       <button onClick={handleTimer}>Toggle Timer</button>
-      { isToggled ? "" : <Timer />}
+      { isVisible ? <Timer /> : null }
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <ProjectForm />
       <ProjectList projects={projects} />
