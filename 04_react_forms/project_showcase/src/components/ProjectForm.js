@@ -3,13 +3,12 @@ import React, { useState } from "react";
 const ProjectForm = ({ projects, onAddProject }) => {
   
   // Breaking Inputs Out Into Separate States
-  const [ name, nameSetter ] = useState("");
-  const [ about, aboutSetter ] = useState("");
+  // const [ name, nameSetter ] = useState("");
+  // const [ about, aboutSetter ] = useState("");
   // ...
   
   // Creating One State Object to Manage Form Data
   const [ formData, formDataSetter ] = useState({
-    id: projects.length + 1,
     name: "",
     about: "",
     phase: "",
@@ -18,13 +17,22 @@ const ProjectForm = ({ projects, onAddProject }) => {
   });
 
   const handleInputChange = (e) => {
-    // const name = e.target.name;
-    // const value = e.target.value;
-    const { name, value } = e.target;
+    
+    // const { name, value } = e.target;
+    
+    const keyName = e.target.name;
+    const value = e.target.value;
 
     // formDataSetter(formData.name)
 
-    formDataSetter((formData) => ({...formData, [name]: value }));
+    console.log(`Name of Target of Event: ${keyName}`);
+    console.log(`Value of Target of Event: ${value}`);
+
+    // formDataSetter((formData) => ({...formData, name: "Chris" }));
+    // formDataSetter((formData) => ({...formData, about: "About Chris" }));
+    // formDataSetter((formData) => ({...formData, phase: "2" }));
+    
+    formDataSetter((formData) => ({...formData, [keyName]: value }));
   }
   
   // console.log(formData);
