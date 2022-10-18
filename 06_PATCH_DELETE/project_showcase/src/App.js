@@ -46,6 +46,20 @@ const App = () => {
       setProjects(updatedProjects);
   }
 
+  // Function to Handle Project Deletions
+  const onDeleteProject = (projectId) => {
+    
+    // Create a New Collection of Projects, Filter Out Deleted Project
+    const updatedProjects = projects.filter(originalProject => {
+      
+      // Return All Cases Where This is True
+      return originalProject.id !== projectId
+    });
+
+    // Update "projects" State With Newest Collection
+    setProjects(updatedProjects);
+  }
+
   const completeEditing = () => {
     setProjectId(null);
   };
@@ -75,6 +89,7 @@ const App = () => {
       <ProjectList
         projects={projects}
         enterProjectEditModeFor={enterProjectEditModeFor}
+        onDeleteProject={onDeleteProject}  
       />
     </div>
   );
