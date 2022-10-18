@@ -22,7 +22,7 @@ const ProjectListItem = ({ project, enterProjectEditModeFor, onDeleteProject }) 
       
       // Update "projects" State to No Longer Include Project
       onDeleteProject(id);
-    })
+    });
   };
 
   return (

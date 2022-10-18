@@ -24,7 +24,7 @@ const App = () => {
     setProjects((projects) => [...projects, newProj]);
   };
 
-  // Function to Handle Project Updates
+  // Function to Handle Updates to "projects" State
   const onUpdateProject = (updatedProject) => {
     // console.log(updatedProject);
 
