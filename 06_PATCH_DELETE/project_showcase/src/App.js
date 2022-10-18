@@ -24,6 +24,28 @@ const App = () => {
     setProjects((projects) => [...projects, newProj]);
   };
 
+  // Function to Handle Project Updates
+  const onUpdateProject = (updatedProject) => {
+    // console.log(updatedProject);
+
+    // Update "projects" State to Include Latest Updated Project
+      
+      // Return Entirely New Array Containing Updated Project (.map)
+
+      const updatedProjects = projects.map(originalProject => {
+        
+        // Find Project in Question
+        if (originalProject.id === updatedProject.id) {
+          return updatedProject;
+        } else {
+          return originalProject;
+        }
+      });
+
+      // Replacing Original Array of "projects" with "updatedProjects"
+      setProjects(updatedProjects);
+  }
+
   const completeEditing = () => {
     setProjectId(null);
   };
@@ -38,6 +60,7 @@ const App = () => {
         <ProjectEditForm
           projectId={projectId}
           completeEditing={completeEditing}
+          onUpdateProject={onUpdateProject}
         />
       );
     } else {

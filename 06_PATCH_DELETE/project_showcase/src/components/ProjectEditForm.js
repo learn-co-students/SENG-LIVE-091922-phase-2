@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const ProjectEditForm = ({ projectId, completeEditing }) => {
+const ProjectEditForm = ({ projectId, completeEditing, onUpdateProject }) => {
   const initialState = {
     name: "",
     about: "",
@@ -26,6 +26,27 @@ const ProjectEditForm = ({ projectId, completeEditing }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
+
+    // fetch PATCH Request
+    fetch(`http://localhost:4000/projects/${projectId}`, {
+      method: "PATCH",
+      headers: {
+        
+        // Here's What We're Sending UP
+        "Content-Type": "application/json",
+        
+        // Here's What We Expect / Accept In Return
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(res => res.json())
+    .then(updatedProject => {
+      
+      // Make a Change to "projects" State To Include Newest Object
+      onUpdateProject(updatedProject);
+    });
+
     // Add code here
     completeEditing();
   }
