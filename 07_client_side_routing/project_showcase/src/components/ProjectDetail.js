@@ -1,11 +1,20 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 const ProjectDetail = () => {
   const [claps, setClaps] = useState(0);
   const [project, setProject] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  const id = 1;
+  // Setting Static Project ID
+  // const id = 1;
+
+  // Setting Dynamic Project ID
+  const { id } = useParams();
+  
+  // console.log(useParams());
+
+  // console.log(id);
 
   useEffect(() => {
     fetch(`http://localhost:4000/projects/${id}`)

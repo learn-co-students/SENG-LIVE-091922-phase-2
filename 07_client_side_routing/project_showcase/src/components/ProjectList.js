@@ -1,5 +1,6 @@
 import ProjectListItem from "./ProjectListItem";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ProjectList = ({
   projects,
@@ -14,12 +15,14 @@ const ProjectList = ({
 
   const projectItems = searchResults.map((project) => {
     return (
-      <ProjectListItem
-        key={project.id}
-        project={project}
-        enterProjectEditModeFor={enterProjectEditModeFor}
-        onDeleteProject={onDeleteProject}
-      />
+      <Link to={`/projects/${project.id}`}>
+        <ProjectListItem
+          key={project.id}
+          project={project}
+          enterProjectEditModeFor={enterProjectEditModeFor}
+          onDeleteProject={onDeleteProject}
+        />
+      </Link>
     );
   });
 
