@@ -195,12 +195,12 @@ return (
         </h1>
       </Link>
       <div className="navigation">
-        <Link className="button" to="/projects">
+        <NavLink className="button" to="/projects">
           All Projects
-        </Link>
-        <Link className="button" to="/projects/new">
+        </NavLink>
+        <NavLink className="button" to="/projects/new">
           Add Project
-        </Link>
+        </NavLink>
         <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
       </div>
     </nav>

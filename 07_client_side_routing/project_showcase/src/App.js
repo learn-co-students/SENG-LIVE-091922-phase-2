@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import ProjectForm from "./components/ProjectForm";
 import ProjectList from "./components/ProjectList";
 import ProjectEditForm from "./components/ProjectEditForm";
-import ProjectPage from "./components/ProjectPage"
+import ProjectDetail from "./components/ProjectDetail";
 import Home from "./components/Home";
 
 const App = () => {
@@ -47,13 +47,13 @@ const App = () => {
     <div className={isDarkMode ? "App" : "App light"}>
       <Header isDarkMode={isDarkMode} onToggleDarkMode={onToggleDarkMode} />
       <Home />
+      <ProjectForm onAddProject={onAddProject} />
+      <ProjectEditForm onUpdateProject={onUpdateProject} />
+      <ProjectDetail />
       <ProjectList
         projects={projects}
         onDeleteProject={onDeleteProject}
       />
-      <ProjectEditForm onUpdateProject={onUpdateProject} />
-      <ProjectForm onAddProject={onAddProject} />
-      <ProjectPage />
     </div>
   );
 };
