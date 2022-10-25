@@ -1,6 +1,7 @@
 import ProjectListItem from "./ProjectListItem";
 import { useState, useEffect } from "react";
 import { NavLink, useHistory, useParams, useRouteMatch, useLocation } from "react-router-dom";
+import { Button, Input } from "./shared";
 
 const ProjectList = ({
   projects,
@@ -85,62 +86,56 @@ const ProjectList = ({
       <h2>Projects</h2>
 
       <div className="filter">
-        <NavLink 
-          className="button" 
+        <Button as={NavLink}
           exact to={{
             pathname: "/projects",
             search: search
           }}
         >
           All
-        </NavLink>
-        <NavLink 
-          className="button" 
+        </Button>
+        <Button as={NavLink}
           to={{
             pathname: "/projects/phase/5",
             search: search
           }}
         >
           Phase 5
-        </NavLink>
-        <NavLink 
-          className="button" 
+        </Button>
+        <Button as={NavLink}
           to={{
             pathname: "/projects/phase/4",
             search: search
           }}
         >
           Phase 4
-        </NavLink>
-        <NavLink
-          className="button"
+        </Button>
+        <Button as={NavLink}
           to={{
             pathname: "/projects/phase/3",
             search: search
           }}
         >
           Phase 3
-        </NavLink>
-        <NavLink 
-          className="button" 
+        </Button>
+        <Button as={NavLink}
           to={{
             pathname: "/projects/phase/2",
             search: search
           }}
         >
           Phase 2
-        </NavLink>
-        <NavLink 
-          className="button" 
+        </Button>
+        <Button as={NavLink} 
           to={{
             pathname: "/projects/phase/1",
             search: search
           }}
         >
           Phase 1
-        </NavLink>
+        </Button>
       </div>
-      <input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
+      <Input type="text" placeholder="Search..." onChange={handleOnChange} value={searchInputText} />
 
       <ul className="cards">{projectItems}</ul>
     </section>

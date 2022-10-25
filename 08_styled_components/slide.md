@@ -7,7 +7,7 @@ presentation:
 
 <!-- slide -->
 
-<h1> Styled Components </h1>
+<h1> Styled Components 💅🏾 </h1>
 
 <!-- slide -->
 

@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink, Link } from "react-router-dom";
 
+// Without "index.js"
+// import Button from "./shared/Button";
+
+// With "index.js"
+import { Button } from "./shared";
+
 const Header = ({ isDarkMode, onToggleDarkMode }) => {
   const buttonTextContent = isDarkMode ? "Light Mode" : "Dark Mode";
 
@@ -13,16 +19,21 @@ const Header = ({ isDarkMode, onToggleDarkMode }) => {
         </Link>
       </h1>
       <nav>
-        <NavLink className="button" exact to="/projects">
+        
+        {/* If we want distinct DOM elements while using 
+        a styled component. */}
+        {/* <Button as={otherComponent} */}
+
+        <Button as={NavLink} exact to="/projects">
           All Projects
-        </NavLink>
-        <NavLink className="button" to="/projects/new">
+        </Button>
+        <Button as={NavLink} to="/projects/new">
           Add Project
-        </NavLink>
-        <NavLink className="button" to="/about">
+        </Button>
+        <Button as={NavLink} to="/about">
           About
-        </NavLink>
-        <button onClick={onToggleDarkMode}>{buttonTextContent}</button>
+        </Button>
+        <Button onClick={onToggleDarkMode}>{buttonTextContent}</Button>
       </nav>
     </header>
   );
